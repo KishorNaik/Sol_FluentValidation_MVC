@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model Sol_Demo.ViewModels.ParentChildViewModel
+
+<h1>Index</h1>
+
+<form asp-controller="ParentChildDemo" asp-action="OnSubmit" asp-antiforgery="true">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtParentDate">Parent Date</label>
+                    <input id="txtparentDate" type="date" class="form-control" asp-for="@Model.Parent.ParentBirtday" />
+                    <span asp-validation-for="@Model.Parent.ParentBirtday" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtChildDate">Child Date</label>
+                    <input id="txtChildDate" type="date" class="form-control" asp-for="@Model.Parent.Child.ChildBirthday" />
+                    <span asp-validation-for="@Model.Parent.Child.ChildBirthday" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <input id="btnSubmit" type="submit" class="btn btn-success" value="Submit" />
+            </div>
+        </div>
+
+    </div>
+</form>

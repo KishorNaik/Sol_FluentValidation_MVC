@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model Sol_Demo.ViewModels.UsersViewModel
+<h1>Index</h1>
+
+<form asp-controller="UsersDemo" asp-action="OnSubmit" asp-antiforgery="true">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtFirstName">FirstName</label>
+                    <input id="txtFirstName" type="text" class="form-control" asp-for="@Model.Users.FirstName" />
+                    <span asp-validation-for="@Model.Users.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtLastName">LastName</label>
+                    <input id="txtLastName" type="text" class="form-control" asp-for="@Model.Users.LastName" />
+                    <span asp-validation-for="@Model.Users.LastName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtEmailId">Email Id</label>
+                    <input id="txtEmailId" type="text" class="form-control" asp-for="@Model.Users.UserCommunication.EmailId" />
+                    <span asp-validation-for="@Model.Users.UserCommunication.EmailId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <label for="txtMobileNo">Mobile No</label>
+                    <input id="txtMobileNo" type="number" class="form-control" asp-for="@Model.Users.UserCommunication.MobileNo" />
+                    <span asp-validation-for="@Model.Users.UserCommunication.MobileNo" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <input id="btnSubmit" type="submit"  class="btn btn-success" value="Submit"/>
+            </div>
+        </div>
+    </div>
+
+</form>
